@@ -1,0 +1,452 @@
+<!-- Colors white #F8FEE9 and black #293127 -->
+
+<template name="customer_journey_card">
+<div class="uk-container uk-container-center uk-text-center">
+   <div class="uk-alert uk-alert-success" data-uk-alert>
+    <a href="" class="uk-alert-close uk-close"></a>
+     <p><i class="fa fa-life-ring" aria-hidden="true"> </i><b> TIP: </b>
+To indicate a message containing information for first time users. <br>Ex. After you have created pins, you can rearrange them accordingly by click on the pins' <b><i class="fa fa-arrows" aria-hidden="true"></i></b> icon ! </p>
+</div>
+  <br><br>
+     <!--breadcrumb--> 
+        <div class="uk-width-1-2">
+ <div class="uk-panel">
+
+     <h3 class="uk-panel-title uk-text-bold uk-text-large">CUSTOMER JOURNEY CANVAS</h3>
+</div> 
+        </div>
+    
+
+
+<!-- template canvas grid --> 
+   <div class="uk-align-right" data-uk-sticky="{bottom:100}">
+       
+       <button class="uk-button uk-icon-print" type="button">
+</button>
+       <button class="uk-button uk-icon-file-pdf-o" type="button">
+</button>
+       <button class="uk-button uk-icon-share-alt" type="button"></button>
+    
+    </div>  
+    
+    
+    <hr> <br><br>
+    {{>customer_journey_canvas_page}}
+    </div>
+</template>
+
+
+<template name="customer_journey_canvas_page">
+    
+    <div class="uk-responsive-width uk-text-center uk-container-center">
+   
+        
+        <!-- MODALS --> 
+    
+    <div id="create-customerjourney-pre" class="uk-modal">
+   <div class="uk-modal-dialog">
+        
+        <div class="uk-modal-header">
+         <a class="uk-modal-close uk-close uk-align-right"></a>   
+            
+        </div>
+        
+        <div class="uk-modal-content">
+       
+           <form class="uk-form">
+
+    <fieldset data-uk-margin>
+        <legend>Create a Keynote Pre-Service Touchpoint</legend>
+        <input class="uk-form-width-large" type="text" placeholder="Customer Objective/Goal" name="preservicegoal">
+        <textarea class="uk-form-width-large" id="" col="30" rows="5" placeholder="Description of Activity; customer thoughts, key feelings, etc" name="preservicetext"></textarea>
+    </fieldset>
+             <br>   
+         <fieldset data-uk-margin>
+        
+       <legend>Emotive Response </legend>
+           
+             <label>
+        <input name="preservice" type="radio" value="good">
+             <i class="fa fa-smile-o" aria-hidden="true"></i>
+                - Good Experience
+       </label> 
+             
+               <label>
+        <input name="preservice" type="radio" value="bad">
+             <i class="fa fa-frown-o" aria-hidden="true"></i>
+               - Bad Experience
+       </label> 
+             
+               <label>
+        <input name="preservice" type="radio" value="needing">
+             <i class="fa fa-meh-o" aria-hidden="true"></i>
+              - Needing Experience
+       </label>               
+                 
+        </fieldset>   
+               <br>
+               <br>
+                    
+         <div class="uk-modal-footer uk-button-group uk-align-right uk-vertical-align-bottom"><button class="uk-button uk-modal-close" type="button">Cancel</button> <button class="uk-button uk-modal-close uk-button-success create-preservice-pin" type="submit">Create</button></div>      
+                
+                <!-- </fieldset> -->   
+               
+
+            </form>
+        
+        </div>
+        
+        
+        <br>
+        <br>
+    </div>
+</div>
+        
+        <div id="create-customerjourney-service" class="uk-modal">
+   <div class="uk-modal-dialog">
+        
+        <div class="uk-modal-header">
+         <a class="uk-modal-close uk-close uk-align-right"></a>   
+            
+        </div>
+        
+        <div class="uk-modal-content">
+       
+            <form class="uk-form">
+
+    <fieldset data-uk-margin>
+        <legend>Create a Service Engagement Point</legend>
+       <input class="uk-form-width-large" type="text" placeholder="Customer Objective/Goal" name="servicegoal">
+        <textarea class="uk-form-width-large" id="" col="30" rows="5" placeholder="Description of Activity; customer thoughts, key feelings, etc" name="servicetext"></textarea>
+    </fieldset>
+             <br>   
+         <fieldset data-uk-margin>
+        
+       <legend>Emotive Response </legend>
+           
+               <label>
+        <input name="service" type="radio" value="good">
+             <i class="fa fa-smile-o" aria-hidden="true"></i>
+                - Good Experience
+       </label> 
+             
+               <label>
+        <input name="service" type="radio" value="bad">
+             <i class="fa fa-frown-o" aria-hidden="true"></i>
+               - Bad Experience
+       </label> 
+             
+               <label>
+        <input name="service" type="radio" value="needing">
+             <i class="fa fa-meh-o" aria-hidden="true"></i>
+              - Needing Experience
+       </label>                        
+                 
+        </fieldset>   
+               <br>
+               <br>
+                    
+                    
+         <div class="uk-modal-footer uk-button-group uk-align-right uk-vertical-align-bottom"><button class="uk-button uk-modal-close" type="button">Cancel</button> <button class="uk-button uk-modal-close uk-button-success create-service-pin" type="submit">Create</button></div>      
+                
+                <!-- </fieldset> -->   
+               
+
+            </form>
+        
+        </div>
+        
+        
+        <br>
+        <br>
+    </div>
+</div>
+        
+        
+        <div id="create-customerjourney-post" class="uk-modal">
+   <div class="uk-modal-dialog">
+        
+        <div class="uk-modal-header">
+         <a class="uk-modal-close uk-close uk-align-right"></a>   
+            
+        </div>
+        
+        <div class="uk-modal-content">
+       
+            <form class="uk-form">
+
+    <fieldset data-uk-margin>
+        <legend>Create a Post-Service Engagement Point</legend>
+        <input class="uk-form-width-large" type="text" placeholder="Customer Objective/Goal" name="postservicegoal">
+        <textarea class="uk-form-width-large" id="" col="30" rows="5" placeholder="Description of Activity; customer thoughts, key feelings, etc" name="postservicetext"></textarea>
+    </fieldset>
+             <br>   
+         <fieldset data-uk-margin>
+        
+       <legend>Emotive Response </legend>
+           
+               <label>
+        <input name="postservice" type="radio" value="good">
+             <i class="fa fa-smile-o" aria-hidden="true"></i>
+                - Good Experience
+       </label> 
+             
+               <label>
+        <input name="postservice" type="radio" value="bad">
+             <i class="fa fa-frown-o" aria-hidden="true"></i>
+               - Bad Experience
+       </label> 
+             
+               <label>
+        <input name="postservice" type="radio" value="needing">
+             <i class="fa fa-meh-o" aria-hidden="true"></i>
+              - Needing Experience
+       </label>                         
+                 
+        </fieldset>   
+               <br>
+               <br>
+                    
+         <div class="uk-modal-footer uk-button-group uk-align-right uk-vertical-align-bottom"><button class="uk-button uk-modal-close" type="button">Cancel</button> <button class="uk-button uk-modal-close uk-button-success create-postservice-pin" type="submit">Create</button></div>      
+                
+                <!-- </fieldset> -->   
+               
+
+            </form>
+        
+        </div>
+        
+        
+        <br>
+        <br>
+    </div>
+</div>
+        
+         <!-- This is the modals -->
+   <div id="create-customerjourney-suggestion" class="uk-modal">
+   <div class="uk-modal-dialog">
+        
+        <div class="uk-modal-header">
+         <a class="uk-modal-close uk-close uk-align-right"></a>   
+            
+        </div>
+        
+        <div class="uk-modal-content">
+       
+            <form class="uk-form">
+
+    <fieldset data-uk-margin>
+        <legend>Add Additional Suggestions and Improvements</legend>
+        <textarea class="uk-form-width-large" id="" col="30" rows="5" placeholder="Comments or Remarks go here ..." name="postrecommendationtext"></textarea>
+        
+          
+         <div class="uk-modal-footer uk-button-group uk-align-right uk-vertical-align-bottom"><button class="uk-button uk-modal-close" type="button">Cancel</button> <button class="uk-button uk-modal-close uk-button-success create-suggestion-pin" type="submit">Add</button></div>      
+                
+                </fieldset>
+
+            </form>
+        
+        </div>
+        
+        
+        <br>
+        <br>
+    </div>
+</div>
+    
+    
+    <!-- CANVAS --> 
+
+<div class="uk-grid uk-grid-match" data-uk-grid-match="{target:'.uk-panel'}">
+    
+    <div class="uk-width-1-1">
+        
+      <br>
+        
+        <div class="uk-width-1-3 uk-width-small-1-1 uk-width-medium-1-3 uk-width-large-1-3 " style="background-color:#D5F6B8;"><br> <h4 class="uk-text-contrast uk-text-bold uk-margin"><span data-uk-tooltip title="This is all activities and planning before the service.">PRE-SERVICE PERIOD</span></h4><hr>
+        
+        <div class="uk-grid uk-grid-small">
+        
+            <div class="uk-width-1-1">
+       
+             <p><button class="uk-button uk-icon-plus" data-uk-modal="{target:'#create-customerjourney-pre', center:true}"> New Touchpoint</button></p> 
+                
+                
+            <ul class="uk-list uk-list-space uk-sortable" style="list-style-type: none;background:#c3d5ce;"  data-uk-sortable="{handleClass:'uk-sortable-handle', group:'list-sorting'}">
+      
+                {{#each preservice}}
+                   
+                <li class="uk-width-1-1" style="font-size: 12px;background:#E6E6E6;">
+            <div class="uk-panel">
+            
+            <p class="uk-panel-title uk-width-1-1 uk-sortable-handle" style="font-size: 12px;background:#e1eae7;"><i class="uk-icon-arrows" ></i></p>
+                <b>{{title}}</b><br>
+                {{description}}
+                <br>
+                {{emotive}} <b><span class="emotive" style="color:{{getStatusColor emotive}}"><i class="fa {{getStatusIcon emotive}} emotive  fa-2x" aria-hidden="true"></i></span></b>
+                <br>
+                
+                <br>
+<button href="#" class="delete-pin-preservice uk-button-danger uk-button-small uk-width-1-1 uk-icon-trash" style="color:#f5f5f5;">      
+            </button> 
+                
+            </div>
+            </li>
+                {{/each}}
+    
+                
+</ul>   
+         
+            </div>
+            
+        </div> 
+        
+        </div>
+        
+        <div class="uk-width-1-3 uk-width-small-1-1 uk-width-medium-1-3 uk-width-large-1-3 " style="background-color:#C4E661;"><br> <h4 class="uk-text-contrast uk-text-bold uk-margin"><span data-uk-tooltip title="This is all activities and events during the service.">SERVICE PERIOD</span></h4><hr>
+        
+        <div class="uk-grid uk-grid-small">
+        
+            <div class="uk-width-1-1">
+       
+             <p><button class="uk-button uk-icon-plus" data-uk-modal="{target:'#create-customerjourney-service', center:true}"> New Touchpoint</button></p> 
+            
+                <ul class="uk-list uk-list-space uk-sortable" style="list-style-type: none;background:#c3d5ce;"  data-uk-sortable="{handleClass:'uk-sortable-handle', group:'list-sorting'}">
+      
+                {{#each service}}
+                   
+                <li class="uk-width-1-1" style="font-size: 12px;background:#E6E6E6;">
+            <div class="uk-panel">
+            
+            <p class="uk-panel-title uk-width-1-1 uk-sortable-handle" style="font-size: 12px;background:#e1eae7;"><i class="uk-icon-arrows" ></i></p>
+                <b>{{title}}</b><br>
+                {{description}}
+                <br>
+                {{emotive}} <b><span class="emotive" style="color:{{getStatusColor emotive}}"><i class="fa {{getStatusIcon emotive}} emotive  fa-2x" aria-hidden="true"></i></span></b>
+                <br>
+                
+                <br>
+<button href="#" class="delete-pin-service uk-button-danger uk-button-small uk-width-1-1 uk-icon-trash" style="color:#f5f5f5;">      
+            </button> 
+                
+            </div>
+            </li>
+                {{/each}}
+    
+                
+</ul>   
+                
+         
+            </div>
+            
+        </div> 
+        
+                
+        </div>
+        
+        
+        
+        
+        
+        
+        <div class="uk-width-1-3 uk-width-small-1-1 uk-width-medium-1-3 uk-width-large-1-3 " style="background-color:#66a626;"><br> <h4 class="uk-text-contrast uk-text-bold uk-margin"><span data-uk-tooltip title="This is all activities and reiterations before the service.">POST-SERVICE PERIOD</span></h4><hr>
+        
+        <div class="uk-grid uk-grid-small">
+        
+            <div class="uk-width-1-1">
+       
+             <p><button class="uk-button uk-icon-plus" data-uk-modal="{target:'#create-customerjourney-post', center:true}"> New Touchpoint</button></p> 
+            
+                <ul class="uk-list uk-list-space uk-sortable" style="list-style-type: none;background:#c3d5ce;"  data-uk-sortable="{handleClass:'uk-sortable-handle', group:'list-sorting'}">
+      
+                {{#each postservice}}
+                   
+                <li class="uk-width-1-1" style="font-size: 12px;background:#E6E6E6;">
+            <div class="uk-panel">
+            
+            <p class="uk-panel-title uk-width-1-1 uk-sortable-handle" style="font-size: 12px;background:#e1eae7;"><i class="uk-icon-arrows" ></i></p>
+                <b>{{title}}</b><br>
+                {{description}}
+                <br>
+                {{emotive}} <b><span class="emotive" style="color:{{getStatusColor emotive}}"><i class="fa {{getStatusIcon emotive}} emotive  fa-2x" aria-hidden="true"></i></span></b>
+                <br>
+                
+                <br>
+<button href="#" class="delete-pin-postservice uk-button-danger uk-button-small uk-width-1-1 uk-icon-trash" style="color:#f5f5f5;">      
+            </button> 
+                
+            </div>
+            </li>
+                {{/each}}
+    
+                
+</ul>   
+                
+         
+            </div>
+            
+        </div>  
+        
+        </div>
+    
+    </div> 
+        </div>
+    
+
+        <div class="uk-grid uk-grid-match" data-uk-grid-match="{target:'.uk-panel'}">
+        
+             <div class="uk-width-1-1">
+        
+      <br>
+    
+    <div class="uk-width-1-1 uk-width-small-1-1 uk-width-medium-1-1 uk-width-large-1-1 " style="background-color:#ffc266;"><br> <h4 class="uk-text-contrast uk-text-bold uk-margin" style="">GENERAL SUGGESTIONS &amp; IMPROVEMENTS</h4><hr>
+       
+      
+         <div class="uk-grid ">
+        
+            <div class="uk-width-1-1">
+       
+             <p><button class="uk-button uk-icon-plus" data-uk-modal="{target:'#create-customerjourney-suggestion', center:true}"> New Pin</button></p>
+              </div>
+             </div> 
+                
+        
+                <ul class="uk-grid uk-grid-match uk-align-center uk-grid-width-1-6 uk-sortable  uk-margin" style="list-style-type:none;background-color:#c3d5ce;padding-top:25px;padding-left:5px;padding-right:45px;" data-uk-grid-margin data-uk-grid-match="{target:'.uk-panel'}" data-uk-sortable="{handleClass:'uk-sortable-handle', group:'list-sorting-rec'}">
+      
+                {{#each additionalcomments}}
+                  
+                <li class="" style="font-size: 12px;">
+                    
+            <div class="uk-panel">
+            
+            <p class="uk-panel-title uk-width-1-1 uk-sortable-handle uk-align-center data-uk-margin " style="font-size: 12px;background-color:#e1eae7;"><i class="uk-icon-arrows" ></i>
+                <br>
+                {{description}}
+                 
+                <button href="#" class="delete-pin-suggest uk-button-danger uk-button-small uk-width-1-1 uk-icon-trash" style="color:#f5f5f5;">      
+            </button> 
+                </p>              
+                
+
+                
+            </div>
+            </li>
+                {{/each}}
+    
+                
+</ul>   
+         
+           
+       </div>      
+       
+        
+        
+      
+      
+    </div>
+    
+    </div>
+        
+    </div>
+
+</template>

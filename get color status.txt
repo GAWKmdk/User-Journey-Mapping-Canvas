@@ -1,0 +1,48 @@
+<div class="board">
+    <div class="header">
+        <span class="name">Project</span>
+        <span class="status">Status</span>
+    </div>
+    {{#each projects}}
+    <div class="project">
+        <span class="name">{{name}}</span>
+        <span class="status" style="color:{{getStatusColor status}}">{{status}}</span>
+    </div>
+    {{/each}}
+</div>
+For completeness, the helper function getStatusColor looks like this:
+
+Handlebars.registerHelper('getStatusColor', function(status) {
+    switch (status) {
+        case "GOOD" : {
+            return 'green';
+        }
+        break;
+        case "BAD" : {
+            return 'red';
+        }
+        break;
+        default : {
+        ...etc.;
+    }
+});
+UPDATE: In the interests of honesty, I should confess I totally missed that I already had this expanded template in my code and that {{> projects}} was pointing to this. I should have just added the style="color:{{getStatusColor status}}" attribute directly into the referenced project template. So, as much for my benefit as others, the final, working, HTML:
+
+<template name="foo">
+    <div class="board">
+    <div class="header">
+        <span class="name">Project</span>
+        <span class="status">Status</span>
+    </div>
+    {{#each projects}}
+    {{> project}}
+    {{/each}}
+    </div>
+</template>
+
+<template name="project">
+    <div class="project {{selected}}">
+        <span class="name">{{name}}</span>
+        <span class="status"style="color:{{getStatusColor status}}">{{status}}</span>
+    </div>
+</template>
