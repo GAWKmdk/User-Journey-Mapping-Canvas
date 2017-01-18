@@ -7,16 +7,16 @@
 ![example2](https://cloud.githubusercontent.com/assets/23016977/22045318/6963023c-dd11-11e6-93e1-153e4639d468.jpg)
 ![example3](https://cloud.githubusercontent.com/assets/23016977/22045319/6b183b7e-dd11-11e6-9626-53087e43f11b.jpg)
 
-**** Built on the UIKIT package. 
+- Built on the UIKIT package. 
 
+ - Future Updates/Plan (Note these features have the layout built-on but are not functioning) :
 
-# Future Updates/Plan (Note these features have the layout built-on but are not functioning) :
-
-
-** Share the URL.
-** Print/Download as a PDF
-** Clean Canvas - Reset
-** Add recommendations pins to each service point
+* Sharper CSS with cards/shadow
+* Share the URL.
+* Print/Download as a PDF
+* Clean Canvas - Reset
+* User Login and Role Management
+* Add recommendations pins to each service point
 
 # MIT LICENSE
 
