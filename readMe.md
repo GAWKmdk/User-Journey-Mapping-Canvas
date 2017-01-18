@@ -5,7 +5,7 @@
 ![example0](https://cloud.githubusercontent.com/assets/23016977/22045316/66e35598-dd11-11e6-9038-081c4896f34e.jpg)
 ![example1](https://cloud.githubusercontent.com/assets/23016977/22045317/6811b806-dd11-11e6-9951-adc2f874b6c8.jpg)
 ![example2](https://cloud.githubusercontent.com/assets/23016977/22045318/6963023c-dd11-11e6-93e1-153e4639d468.jpg)
-![example3](https://cloud.githubusercontent.com/assets/23016977/22045319/6b183b7e-dd11-11e6-9626-53087e43f11b.jpg)
+
 
 - Built on the UIKIT package. 
 
